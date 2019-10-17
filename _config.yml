@@ -2,3 +2,25 @@ theme: jekyll-theme-architect
 
 title: [somewhere]
 descripiton: []
+show_downloads: flase
+paginate: 20
+paginate_path: "/blog/page:num/"
+timezone: "Asia/Shanghai"
+lang: zh-CN
+author: 'sangazh'
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: 'posts'
+    value:
+      layout: 'post'
+      author: 'sangazh'
+      comments: true
+      share: true
+
+permalink: /:year/:month/:day/:title.html
+plugins: [jekyll-paginate]
+highlighter: rouge
+comments: true      
