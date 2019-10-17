@@ -2,7 +2,7 @@ theme: jekyll-theme-architect
 
 title: [somewhere]
 descripiton: []
-show_downloads: flase
+show_downloads: false
 paginate: 20
 paginate_path: "/blog/page:num/"
 timezone: "Asia/Shanghai"
