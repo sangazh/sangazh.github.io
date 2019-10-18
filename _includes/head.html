@@ -1,66 +1,30 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>{{ site.name }} | {{ page.title }}</title>
-  <meta name="description" content="{{ page.description }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-  <meta property="og:title" content="{{ page.title | escape }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:description" content="{{ page.description }}">
-  <meta property="og:site_name" content="{{ site.name }}">
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="{{ page.url | absolute_url }}">
-  <meta name="twitter:title" content="{{ page.title | escape }}">
-  <meta name="twitter:description" content="{{ page.description }}">
-
-  {% if page.thumb_image %}
-    {% if page.thumb_image contains '://' %}
-      <meta property="og:image" content="{{ page.thumb_image }}">
-      <meta name="twitter:image" content="{{ page.thumb_image }}">
+  <title>
+    {% if page.title == "Home" %}
+      {{ site.title }}{% if site.tagline %} &middot; {{ site.tagline }}{% endif %}
     {% else %}
-      <meta property="og:image" content="{{ site.url }}{% asset '{{ page.thumb_image }}' @path %}">
-      <meta name="twitter:image" content="{{ site.url }}{% asset '{{ page.thumb_image }}' @path %}">
+      {{ page.title }} &middot; {{ site.title }}
     {% endif %}
-  {% else %}
-    <meta property="og:image" content="{{ site.url }}{% asset og-image.jpg @path %}">
-    <meta name="twitter:image" content="{{ site.url }}{% asset og-image.jpg @path %}">
-  {% endif %}
+  </title>
 
-  <link href="{{ 'feed.xml' | absolute_url }}" type="application/rss+xml" rel="alternate" title="{{ site.name }} Last 10 blog posts" />
+  {% include google-analytics.html %}
 
-  {% if site.local_fonts %}
-    {% asset fonts.css %}
-  {% endif %}
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
+  {% include font-includes.html %}
 
-  {% if site.theme_toggle == true %}
+  <!-- Icons -->
+  {% include favicons.html %}
 
-    {% if site.blog_theme == "light" %}
-      <link rel="icon" type="image/x-icon" href="{% asset favicon-light.ico @path %}">
-      <link rel="apple-touch-icon" href="{% asset apple-touch-icon-light.png @path %}">
-      <link rel="stylesheet" type="text/css" title="light" id="light" href="{% asset light.css @path%}">
-      <link rel="stylesheet" type="text/css" title="dark" id="dark" href="{% asset dark.css @path%}" disabled="true">
-    {% else %}
-      <link rel="icon" type="image/x-icon" href="{% asset favicon-dark.ico @path %}">
-      <link rel="apple-touch-icon" href="{% asset apple-touch-icon-dark.png @path %}">
-      <link rel="stylesheet" type="text/css" title="light" id="light" href="{% asset light.css @path%}">
-      <link rel="stylesheet" type="text/css" title="dark" id="dark" href="{% asset dark.css @path%}" disabled="false">
-    {% endif %}
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.feed.path | default: 'feed.xml' | relative_url }}" />
 
-  {% else %}
-
-    {% if site.blog_theme == "light" %}
-      <link rel="icon" type="image/x-icon" href="{% asset favicon-light.ico @path %}">
-      <link rel="apple-touch-icon" href="{% asset apple-touch-icon-light.png @path %}">
-      {% asset light.css %}
-    {% else %}
-      <link rel="icon" type="image/x-icon" href="{% asset favicon-dark.ico @path %}">
-      <link rel="apple-touch-icon" href="{% asset apple-touch-icon-dark.png @path %}">
-      {% asset dark.css %}
-    {% endif %}
-
-  {% endif %}
-
+  {% include custom-head.html %}
 </head>
