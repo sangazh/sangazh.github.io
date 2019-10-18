@@ -4,8 +4,8 @@ highlighter:      rouge
 
 # Setup
 title:            笔记
-tagline:          ‘’
-description:      ‘’
+tagline:          ‘test’
+description:      ‘踩坑记录’
 url:              https://sangazh.github.io
 baseurl:          ''
                   # the optional subpath of your site, e.g. "/blog"
