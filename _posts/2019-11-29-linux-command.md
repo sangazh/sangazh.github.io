@@ -8,9 +8,6 @@ excerpt_separator: <!--more-->
 
 因为注册了O'Reilly的会员，在查可以学习的资料时，正好补一下不那么常用，也就是我不太会的linux命令。
 
-[TOC]
-
-<!--more-->
 
 ## 操作文件
 ### rm、cp、mv
@@ -200,6 +197,7 @@ Super User Do
 
 `ctrl+g` cancel search
 
+<!--more-->
 ## install software
 ### yum - centos, red hat 等用
 `yum search`
