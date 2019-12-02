@@ -100,7 +100,7 @@ find /root -name idip
 ### file
 display file type
 
-```
+```bash
 $ file gitea-compose.yml
 gitea-compose.yml: ASCII text
 
@@ -129,7 +129,7 @@ string delimiter
 ### sftp
 
 ```
-sftp sangazh@192.168.1.101
+sftp foobar@192.168.1.101
 ```
 
 居然和ssh一样，但是可以轻松地从本地传文件，使用 `put`, `get`
@@ -137,12 +137,12 @@ sftp sangazh@192.168.1.101
 ## 进程，job管理
 
 ### ps
-`-e` everything
-`-f` format
-`-h` tree
-`--forest` 带线的树状
-`-u` 带上用户，如 `ps -u zhangshan`
-`-p` 带pid， 如 `ps -p 1`
+- `-e` everything
+- `-f` format
+- `-h` tree
+- `--forest` 带线的树状
+- `-u` 带上用户，如 `ps -u foobar`
+- `-p` 带pid， 如 `ps -p 1`
 
 ### jobs
 显示jobs
@@ -160,15 +160,16 @@ suspend的job放到后台运行
 `kill -l` 显示可用的signal
 
 `kill 111` 表示正常结束pid=111的进程，默认signal是15, Term(inate)，`SIGTERM`
+
 `kill -9 111` 表示强制结束，signal为9，是`SIGKILL`
 
 具体可见：[Link](https://www.gnu.org/software/libc/manual/html_node/Termination-Signals.html)
 
 ## scheduling repeated jobs
 ### crontab
-`crontab -l` List
-`crontab -e` edit
-`crontab -r` delete all
+- `crontab -l` List
+- `crontab -e` edit
+- `crontab -r` delete all
 
 ## 切换用户
 ### su
@@ -184,13 +185,13 @@ Super User Do
 `sudo su - ` 带着自己的环境变量去root ~
 
 ## history
-`history` 过去的历史输入
-`!!` 上次输入的直接执行
-`!N` N 表示第N个历史输入
-`!string` string表示某个command开始的单词
-`!:N` N 表示第N个argument
-`!^` 第一个argument
-`!$` 最后一个argument
+- `history` 过去的历史输入
+- `!!` 上次输入的直接执行
+- `!N` N 表示第N个历史输入
+- `!string` string表示某个command开始的单词
+- `!:N` N 表示第N个argument
+- `!^` 第一个argument
+- `!$` 最后一个argument
 
 ## history search
 `ctrl+r` 搜索历史记录，输入keyword，如果不是想要的，再次 `ctrl+r`可以选择下一个
@@ -200,28 +201,28 @@ Super User Do
 <!--more-->
 ## install software
 ### yum - centos, red hat 等用
-`yum search`
-`yum info`
-`yum install package` `yum install -y package` 自动帮你点yes
-`yum remove `
+- `yum search`
+- `yum info`
+- `yum install package` `yum install -y package` 自动帮你点yes
+- `yum remove `
 ### rpm
 install rpm file directly
-`rpm -qa` list all package (`q` query)
-`rpm -qf` 这个文件属于什么package
-`rpm -ql package` list package's files
-`rpm -ivh xxx.rpm` install (`i` install `v` verbose `h` pring hash for progress)
-`rpm -e package` erase
+- `rpm -qa` list all package (`q` query)
+- `rpm -qf` 这个文件属于什么package
+- `rpm -ql package` list package's files
+- `rpm -ivh xxx.rpm` install (`i` install `v` verbose `h` pring hash for progress)
+- `rpm -e package` erase
 ### deb - ubuntu等用
 `apt`
-`apt-cache search string`
-`apt-get install [-y] package`
-`apt-get remove package` remove package, leaving configuration
-`apt-get purge package` remove package, deleting configuration
+- `apt-cache search string`
+- `apt-get install [-y] package`
+- `apt-get remove package` remove package, leaving configuration
+- `apt-get purge package` remove package, deleting configuration
 ### dpkg
 install dep file directly
-`dpkg -l`
-`dpkg -i xx.deb`
-`dpkg -S xx.file` check xx.file in which package
+- `dpkg -l`
+- `dpkg -i xx.deb`
+- `dpkg -S xx.file` check xx.file in which package
 
 ## Reference
-[Learn Linux in 5 Days and Level Up Your Career - O'Reilly](https://learning.oreilly.com/videos/learn-linux-in/9781789802610)
+- [Learn Linux in 5 Days and Level Up Your Career - O'Reilly](https://learning.oreilly.com/videos/learn-linux-in/9781789802610)
