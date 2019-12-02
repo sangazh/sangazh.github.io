@@ -9,11 +9,11 @@ excerpt_separator: <!--more-->
 因为注册了O'Reilly的会员，在查可以学习的资料时，正好补一下不那么常用，也就是我不太会的linux命令。
 
 
-## 操作文件
-### rm、cp、mv
+### 操作文件
+#### rm、cp、mv
 常用命令不多说
 
-### wildcards
+#### wildcards
 正则里的规则
 
 比如：
@@ -27,7 +27,7 @@ excerpt_separator: <!--more-->
 ```
 可在 `ls`,`rm`, `cp` 等命令中组合使用
 
-## Input, Output, redirect
+### Input, Output, redirect
 
 | I/O Name | Abbr | File Descriptor |
 |---|---|---|
@@ -45,10 +45,10 @@ excerpt_separator: <!--more-->
 
 通过fd可以任意redirect到文件或者丢掉
 
-## 对比文件
+### 对比文件
 三个命令
 
-### diff
+#### diff
 ```
 $ diff file1 file2
 2c2
@@ -67,7 +67,7 @@ action有
 - `c` - change
 - `d` - delete
 
-### sdiff
+#### sdiff
 side-by-side 版的diff
 
 ```
@@ -85,19 +85,19 @@ g							      <
 `<` file1 
 `>` file2
 
-### vimdiff
+#### vimdiff
 vim下高亮做对比
 
 
-## 搜索
+### 搜索
 
-### find
+#### find
 
 ```
 find /root -name idip
 ```
 
-### file
+#### file
 display file type
 
 ```bash
@@ -108,25 +108,25 @@ $ file p3.csv
 p3.csv: UTF-8 Unicode text, with CRLF line terminators
 ```
 
-### locate
+#### locate
 比 `find`更高效
 locate是用index的，所以会更快，但是不是real time的，find是real time
 
-### strings
+#### strings
 筛选出human readable的文字
 
-### cut
+#### cut
 string delimiter
 太复杂了不用
 
-### less
+#### less
 `more`的升级版
 > less is more
 
-## 文件传输
-### scp
+### 文件传输
+#### scp
 
-### sftp
+#### sftp
 
 ```
 sftp foobar@192.168.1.101
@@ -134,9 +134,9 @@ sftp foobar@192.168.1.101
 
 居然和ssh一样，但是可以轻松地从本地传文件，使用 `put`, `get`
 
-## 进程，job管理
+### 进程，job管理
 
-### ps
+#### ps
 - `-e` everything
 - `-f` format
 - `-h` tree
@@ -144,19 +144,19 @@ sftp foobar@192.168.1.101
 - `-u` 带上用户，如 `ps -u foobar`
 - `-p` 带pid， 如 `ps -p 1`
 
-### jobs
+#### jobs
 显示jobs
 
-### fg
+#### fg
 正在后台进行的job挪到前台
 
-### bg
+#### bg
 suspend的job放到后台运行
 
-### Ctrl+Z
+#### Ctrl+Z
 目前前台运行的程序suspend
 
-### kill
+#### kill
 `kill -l` 显示可用的signal
 
 `kill 111` 表示正常结束pid=111的进程，默认signal是15, Term(inate)，`SIGTERM`
@@ -165,26 +165,26 @@ suspend的job放到后台运行
 
 具体可见：[Link](https://www.gnu.org/software/libc/manual/html_node/Termination-Signals.html)
 
-## scheduling repeated jobs
-### crontab
+### scheduling repeated jobs
+#### crontab
 - `crontab -l` List
 - `crontab -e` edit
 - `crontab -r` delete all
 
-## 切换用户
-### su
+### 切换用户
+#### su
 switch user
 `su` 啥都不带，默认要切换到 superuser
 `su - ` 环境变量
 
-### whoami
+#### whoami
 
-### sudo
+#### sudo
 Super User Do
 
 `sudo su - ` 带着自己的环境变量去root ~
 
-## history
+### history
 - `history` 过去的历史输入
 - `!!` 上次输入的直接执行
 - `!N` N 表示第N个历史输入
@@ -193,36 +193,36 @@ Super User Do
 - `!^` 第一个argument
 - `!$` 最后一个argument
 
-## history search
+### history search
 `ctrl+r` 搜索历史记录，输入keyword，如果不是想要的，再次 `ctrl+r`可以选择下一个
 
 `ctrl+g` cancel search
 
 <!--more-->
-## install software
-### yum - centos, red hat 等用
+### install software
+#### yum - centos, red hat 等用
 - `yum search`
 - `yum info`
 - `yum install package` `yum install -y package` 自动帮你点yes
 - `yum remove `
-### rpm
+#### rpm
 install rpm file directly
 - `rpm -qa` list all package (`q` query)
 - `rpm -qf` 这个文件属于什么package
 - `rpm -ql package` list package's files
 - `rpm -ivh xxx.rpm` install (`i` install `v` verbose `h` pring hash for progress)
 - `rpm -e package` erase
-### deb - ubuntu等用
+#### deb - ubuntu等用
 `apt`
 - `apt-cache search string`
 - `apt-get install [-y] package`
 - `apt-get remove package` remove package, leaving configuration
 - `apt-get purge package` remove package, deleting configuration
-### dpkg
+#### dpkg
 install dep file directly
 - `dpkg -l`
 - `dpkg -i xx.deb`
 - `dpkg -S xx.file` check xx.file in which package
 
-## Reference
+### Reference
 - [Learn Linux in 5 Days and Level Up Your Career - O'Reilly](https://learning.oreilly.com/videos/learn-linux-in/9781789802610)
