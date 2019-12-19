@@ -15,7 +15,7 @@ redis消息订阅有三种方式
 
 ### Pub/Sub
 
-![da6fad888d8959326cb381f3dfb114a7.png](resources/fc7ddbc001c549ebabf60fb7001bccb8.png)
+![da6fad888d8959326cb381f3dfb114a7.png](assets/resources/fc7ddbc001c549ebabf60fb7001bccb8.png)
 
 - 一对多
 - 同样的消息发给多个订阅者，Subcriber决定要不要
@@ -36,6 +36,7 @@ redis消息订阅有三种方式
 - Subcriber不订阅，他们做操作是 blocking POP。直到publisher push数据之前，一直在等待
 
 Q：多订阅者怎么办？
+
 A: 只能发布给一个订阅者，这个订阅者去决定拿到数据怎么办。
 
 ### Streams
