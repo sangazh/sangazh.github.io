@@ -4,7 +4,7 @@ title: 记一次不知道为何解决了的docker网络问题
 tags:
   - Docker
   - network
-  - Linux
+  - linux
 ---
 
 公司断了几次电后，发现我们开发服务器的docker pull不起作用了。
