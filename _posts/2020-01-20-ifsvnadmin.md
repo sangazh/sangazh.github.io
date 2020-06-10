@@ -4,6 +4,7 @@ title: iF.SVNAdmin
 tags:
   - LDAP
   - SVN
+comments: true  
 ---
 
 [iF.SVNAdmin](http://svnadmin.insanefactory.com/)是一个svn的可视化管理界面工具。不需要数据库，完全基于svn的授权验证文件，支持LDAP的用户、群组功能。可以针对路径配置群组、用户的读写权限。

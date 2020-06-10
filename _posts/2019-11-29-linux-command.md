@@ -4,6 +4,7 @@ title: Linux命令
 tags:
   - linux
 excerpt_separator: <!--more-->
+comments: true
 ---
 
 因为注册了O'Reilly的会员，在查可以学习的资料时，正好补一下不那么常用，也就是我不太会的linux命令。

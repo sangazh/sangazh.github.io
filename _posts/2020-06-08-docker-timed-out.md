@@ -5,6 +5,7 @@ tags:
   - Docker
   - network
   - linux
+comments: true
 ---
 
 公司断了几次电后，发现我们开发服务器的docker pull不起作用了。
