@@ -4,7 +4,6 @@ title: Redis Stream
 tags:
   - redis
 excerpt_separator: <!--more-->
-comments: true
 ---
 
 redis消息订阅有三种方式
