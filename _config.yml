@@ -34,4 +34,5 @@ sidebar_home_link:  true
                                 # set this to the root of the paginate_path
                                 # to enable a separate blog link.
 
-site.disqus.shortname: sangazh-github-io
+disqus:
+  shortname: sangazh-github-io
