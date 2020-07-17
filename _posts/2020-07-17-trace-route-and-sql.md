@@ -187,7 +187,7 @@ func (l *LogWrapper) AfterSQL(ctx core.LogContext) {
 
 有两个set context的入口：
 
-1. 
+1
 
 ```golang
 	engine, err := xorm.NewEngine("mysql", conn)
@@ -202,7 +202,7 @@ func (l *LogWrapper) AfterSQL(ctx core.LogContext) {
 注意这里的`SetLogger`是上面定义过实现了 `ContextLogger`的logger实体。
 而`SetDefaultContext`就可以传入`gin.context`了
 
-2. 
+2
 
 上面的`engine.Select()`返回的其实是`Session`，一般来说query, transaction的前都会先`NewSession()`，再做接下来的工作的。
 
