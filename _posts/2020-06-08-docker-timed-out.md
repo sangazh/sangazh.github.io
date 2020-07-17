@@ -85,7 +85,7 @@ sudo systemctl restart docker
 实际我只做了添加dns，和重启了三遍docker，而已。
 
 
-#### Reference
+#### References
 - [加dns的forum](https://forums.docker.com/t/error-response-from-daemon-get-https-registry-1-docker-io-v2/23741/18)
 - [加代理的stackoverflow](https://stackoverflow.com/questions/46036152/lookup-registry-1-docker-io-no-such-host/46037636)
 - [DaoCloud](https://www.daocloud.io/mirror)
