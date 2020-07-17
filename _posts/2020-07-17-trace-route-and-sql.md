@@ -60,13 +60,12 @@ Gin路由加Trace，有个Bose开源的[go-gin-opentracing](https://github.com/B
 ```	
 
 因为这个第三方库自己调了`logrus`写log，而我想要使用自己服务里的logger实体（后面有提到），所以这里`InitTracing`也稍微重写了，改动不大，就不放上来了。
+
 这里`InitTracing`有几个参数：
 - 服务名
 - jaeger代理的地址。这个地址对应第一步启动的jaeger all-in-one的服务的地址。我们使用的是端口是 `6831`
 - info log是否输出。info一般是创建了span的log。平时可禁用。
 - sample probability 取样概率。默认为0，表示所有。
- 
-这里的`localhost:5775`是对应第一步启动的jaeger all-in-one的服务的地址。我们使用的是端口是 `6831`
 
 接下来直接`Use`该中间件即可。
 
@@ -189,6 +188,7 @@ func (l *LogWrapper) AfterSQL(ctx core.LogContext) {
 有两个set context的入口：
 
 1. 
+
 ```golang
 	engine, err := xorm.NewEngine("mysql", conn)
 	if err != nil {
@@ -205,6 +205,7 @@ func (l *LogWrapper) AfterSQL(ctx core.LogContext) {
 2. 
 
 上面的`engine.Select()`返回的其实是`Session`，一般来说query, transaction的前都会先`NewSession()`，再做接下来的工作的。
+
 那么这个`Session`也有个方法 `Context()`可以用来传入context。所以
 
 ```
@@ -219,7 +220,7 @@ func (l *LogWrapper) AfterSQL(ctx core.LogContext) {
 	session.Select("blabla")...
 ```
 
-这样即可生成以路由为父Span，与这条请求相关的SQL为子Span的多Span组合而成的一条简单的链路。
+这样就生成了以路由为父Span，与这条请求相关的SQL为子Span的多Span组合而成的一条简单的链路。
 
 ### References & Useful Links
 - [Jaeger - Getting Started](https://www.jaegertracing.io/docs/1.18/getting-started/)
