@@ -14,7 +14,7 @@ excerpt_separator: <!--more-->
 
 ### 1. 准备工作
 用docker部署Jaeger All-in-One。架构是这个样子的。
-<img src=https://www.jaegertracing.io/img/architecture-v1.png />
+![architecture.png](https://www.jaegertracing.io/img/architecture-v1.png)
 
 ```
 $ docker run -d --name jaeger \
