@@ -87,6 +87,7 @@ CC=x86_64-pc-linux-gcc CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go build
 #### Reference
 1. [go交叉编译出错(Mac编译Linux)](https://blog.csdn.net/ITqingliang/article/details/103999318)
 2. 有人推荐可以用[xgo](https://github.com/karalabe/xgo)编译
+
 [^1]: [How to cross compile Go with CGO programs for a different OS/Arch](https://gist.github.com/steeve/6905542)
 [^3]: 下载GCC: [Cross GCC on Mac OS X](http://crossgcc.rts-software.org/doku.php?id=compiling_for_linux)
 [^4]: [Mac OSX下编译Linux Kernel Module](http://blog.chinaunix.net/uid-24386829-id-4509506.html)
