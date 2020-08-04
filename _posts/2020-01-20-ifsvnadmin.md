@@ -4,6 +4,7 @@ title: iF.SVNAdmin
 tags:
   - LDAP
   - SVN
+excerpt_separator: <!--more-->
 ---
 
 [iF.SVNAdmin](http://svnadmin.insanefactory.com/)是一个svn的可视化管理界面工具。不需要数据库，完全基于svn的授权验证文件，支持LDAP的用户、群组功能。可以针对路径配置群组、用户的读写权限。
@@ -15,15 +16,14 @@ tags:
 - php
 - linux
 
-
 我们的主要需求是能够接入LDAP来统一管理用户。
 
 代码本身是PHP的，部署比较容易，此外需要安装PHP的LDAP扩展。
 
 LDAP需要配置两个地方，一是这个管理后台的设置，一是svn在apache里的配置。
 
-前者也容易，注意那个`Bind DN`不是非得填DN，平常用来bind的账户就可以。
-
+前者容易，注意那个`Bind DN`不是非得填DN，平常用来bind的账户就可以。
+<!--more-->
 后者示例：
 
 ```bash

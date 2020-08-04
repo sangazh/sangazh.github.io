@@ -11,8 +11,6 @@ excerpt_separator: <!--more-->
 
 搜索了一番，了解了下`go generate stringer`，觉得是个不错的方案。每个iota类型的常量都要定义一个`type`，再针对这个`type`生成 `String()`方法。这样在任意地方print的时候，就能得到常量名，而不是值。
 
-<!--more-->
-
 举例来说：
 
 一般定义iota常量及其`Stringer`可能是这样的……
@@ -49,7 +47,7 @@ const (
     West
 )
 ```
-
+<!--more-->
 在这个文件所在路径下执行 `go generate`，会在相同路径下生成一个 `direction_string.go`的文件，内容是这样的……
 
 ```

@@ -5,6 +5,7 @@ tags:
   - Docker
   - network
   - linux
+excerpt_separator: <!--more-->
 ---
 
 公司断了几次电后，发现我们开发服务器的docker pull不起作用了。
@@ -28,6 +29,7 @@ nameserver 8.8.4.4
 ```
 
 第二个是在systemd运行docker时，把配置的代理的env加载上去。
+<!--more-->
 新建文件：`/etc/systemd/system/docker.service.d/10_docker_proxy.conf`， 内容为：
 ```
 [Service]
